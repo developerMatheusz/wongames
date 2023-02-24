@@ -9,6 +9,6 @@ export default {
 
 const Template: ComponentStory<typeof Main> = (args) => <Main {...args} />;
 
-export const FirstStory = Template.bind({});
+export const Default = Template.bind({});
 
-FirstStory.args = {};
+Default.args = {};

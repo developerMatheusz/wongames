@@ -18,16 +18,26 @@ export default {
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
-export const ThirdStory = Template.bind({});
+export const Default = Template.bind({});
 
-ThirdStory.args = {
+Default.args = {
+  size: "large",
   children: "Buy now"
 };
 
-export const withIcon = Template.bind({});
+export const WithIcon = Template.bind({});
 
-withIcon.args = {
-  size: "small",
+WithIcon.args = {
+  size: "large",
   children: "Buy now",
   icon: <AddShoppingCart />
+};
+
+export const AsLink = Template.bind({});
+
+AsLink.args = {
+  size: "large",
+  children: "Buy now",
+  as: "a",
+  href: "/link"
 };

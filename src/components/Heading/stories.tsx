@@ -16,9 +16,9 @@ const Template: ComponentStory<typeof Heading> = (args) => (
   <Heading {...args} />
 );
 
-export const ThirdStory = Template.bind({});
+export const Default = Template.bind({});
 
-ThirdStory.args = {
+Default.args = {
   children: "Most Populars",
   color: "black"
 };

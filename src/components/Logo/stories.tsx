@@ -9,9 +9,9 @@ export default {
 
 const Template: ComponentStory<typeof Logo> = (args) => <Logo {...args} />;
 
-export const SecondStory = Template.bind({});
+export const Default = Template.bind({});
 
-SecondStory.args = {
+Default.args = {
   color: "black",
   size: "large"
 };

@@ -4,7 +4,13 @@ import Main from ".";
 
 export default {
   title: "Main",
-  component: Main
+  component: Main,
+  parameters: {
+    layout: "fullscreen",
+    backgrounds: {
+      default: "dark"
+    }
+  }
 } as ComponentMeta<typeof Main>;
 
 const Template: ComponentStory<typeof Main> = (args) => <Main {...args} />;

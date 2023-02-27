@@ -4,19 +4,21 @@ import MediaMatch from ".";
 
 export default {
   title: "MediaMatch",
-  component: MediaMatch
+  component: MediaMatch,
+  parameters: {
+    layout: "fullscreen",
+    backgrounds: {
+      default: "dark"
+    }
+  }
 } as ComponentMeta<typeof MediaMatch>;
 
 const Template: ComponentStory<typeof MediaMatch> = () => (
   <MediaMatch greaterThan="medium">Only on Desktop</MediaMatch>
 );
 
-const SecondTemplate: ComponentStory<typeof MediaMatch> = () => (
-  <MediaMatch lessThan="medium">Only on Mobile</MediaMatch>
-);
-
 export const Desktop = Template.bind({});
-export const Mobile = SecondTemplate.bind({});
+export const Mobile = Template.bind({});
 
 Desktop.args = {};
 Mobile.args = {};

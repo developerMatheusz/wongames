@@ -4,7 +4,13 @@ import Logo from ".";
 
 export default {
   title: "Logo",
-  component: Logo
+  component: Logo,
+  parameters: {
+    layout: "fullscreen",
+    backgrounds: {
+      default: "dark"
+    }
+  }
 } as ComponentMeta<typeof Logo>;
 
 const Template: ComponentStory<typeof Logo> = (args) => <Logo {...args} />;

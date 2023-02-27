@@ -18,7 +18,10 @@ export default {
     buttonLink: "/games/defy-death"
   },
   parameters: {
-    layout: "fullscreen"
+    layout: "fullscreen",
+    backgrounds: {
+      default: "dark"
+    }
   }
 } as unknown as ComponentMeta<typeof Banner>;
 
@@ -28,15 +31,9 @@ const Template: ComponentStory<typeof Banner> = (args) => (
   </div>
 );
 
-const SecondTemplate: ComponentStory<typeof Banner> = (args) => (
-  <div style={{ maxWidth: "104rem", margin: "0 auto" }}>
-    <Banner {...args} />
-  </div>
-);
-
 export const Default = Template.bind({});
 
-export const WithRibbon = SecondTemplate.bind({});
+export const WithRibbon = Template.bind({});
 
 Default.args = {};
 WithRibbon.args = {

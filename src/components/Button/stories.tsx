@@ -13,6 +13,12 @@ export default {
     icon: {
       type: ""
     }
+  },
+  parameters: {
+    layout: "fullscreen",
+    backgrounds: {
+      default: "dark"
+    }
   }
 } as unknown as ComponentMeta<typeof Button>;
 

@@ -4,7 +4,13 @@ import Footer from ".";
 
 export default {
   title: "Footer",
-  component: Footer
+  component: Footer,
+  parameters: {
+    layout: "fullscreen",
+    backgrounds: {
+      default: "dark"
+    }
+  }
 } as ComponentMeta<typeof Footer>;
 
 const Template: ComponentStory<typeof Footer> = () => (

@@ -12,6 +12,12 @@ export default {
     children: {
       type: "string"
     }
+  },
+  parameters: {
+    layout: "fullscreen",
+    backgrounds: {
+      default: "dark"
+    }
   }
 } as unknown as ComponentMeta<typeof Ribbon>;
 

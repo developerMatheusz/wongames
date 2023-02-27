@@ -4,7 +4,13 @@ import Menu from ".";
 
 export default {
   title: "Menu",
-  component: Menu
+  component: Menu,
+  parameters: {
+    layout: "fullscreen",
+    backgrounds: {
+      default: "dark"
+    }
+  }
 } as ComponentMeta<typeof Menu>;
 
 const Template: ComponentStory<typeof Menu> = (args) => <Menu {...args} />;
@@ -15,9 +21,5 @@ Default.args = {};
 Default.parameters = {
   viewport: {
     defaultViewport: "mobile1"
-  },
-  layout: "fullscreen",
-  backgrounds: {
-    default: "dark"
   }
 };

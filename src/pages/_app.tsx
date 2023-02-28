@@ -9,6 +9,11 @@ export default function App({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={theme}>
       <Head>
         <title>React avançado - Boilerplate</title>
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+        />
       </Head>
       <GlobalStyles />
       <Component {...pageProps} />

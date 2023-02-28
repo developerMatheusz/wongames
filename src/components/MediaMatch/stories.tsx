@@ -19,11 +19,3 @@ const Template: ComponentStory<typeof MediaMatch> = () => (
 
 export const Desktop = Template.bind({});
 export const Mobile = Template.bind({});
-
-Desktop.args = {};
-Mobile.args = {};
-Mobile.parameters = {
-  viewport: {
-    defaultViewport: "mobile1"
-  }
-};

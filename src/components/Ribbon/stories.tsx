@@ -35,5 +35,3 @@ const Template: ComponentStory<typeof Ribbon> = (args) => (
 );
 
 export const Default = Template.bind({});
-
-Default.args = {};

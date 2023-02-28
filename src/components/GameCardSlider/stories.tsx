@@ -1,21 +1,25 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import Footer from ".";
+import GameCardSlider from ".";
+import items from "./mock";
 
 export default {
-  title: "Footer",
-  component: Footer,
+  title: "GameCardSlider",
+  component: GameCardSlider,
   parameters: {
     layout: "fullscreen",
     backgrounds: {
       default: "dark"
     }
+  },
+  args: {
+    items
   }
-} as ComponentMeta<typeof Footer>;
+} as unknown as ComponentMeta<typeof GameCardSlider>;
 
-const Template: ComponentStory<typeof Footer> = () => (
+const Template: ComponentStory<typeof GameCardSlider> = (args) => (
   <div style={{ maxWidth: "130rem", margin: "0 auto" }}>
-    <Footer />
+    <GameCardSlider {...args} />
   </div>
 );
 

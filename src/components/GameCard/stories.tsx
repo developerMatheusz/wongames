@@ -37,7 +37,6 @@ export const Default = Template.bind({});
 
 export const WithRibbon = Template.bind({});
 
-Default.args = {};
 WithRibbon.args = {
   ribbon: "20% OFF",
   ribbonSize: "small",

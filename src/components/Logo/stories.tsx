@@ -16,8 +16,3 @@ export default {
 const Template: ComponentStory<typeof Logo> = (args) => <Logo {...args} />;
 
 export const Default = Template.bind({});
-
-Default.args = {
-  color: "black",
-  size: "large"
-};

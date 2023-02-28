@@ -30,7 +30,6 @@ export const Default = Template.bind({});
 
 export const WithFloatImage = Template.bind({});
 
-Default.args = {};
 WithFloatImage.args = {
   floatImage: "/img/red-dead-float.png",
   alignment: "right"

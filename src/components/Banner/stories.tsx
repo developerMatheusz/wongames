@@ -32,10 +32,8 @@ const Template: ComponentStory<typeof Banner> = (args) => (
 );
 
 export const Default = Template.bind({});
-
 export const WithRibbon = Template.bind({});
 
-Default.args = {};
 WithRibbon.args = {
   ribbon: "20% off",
   ribbonSize: "normal",

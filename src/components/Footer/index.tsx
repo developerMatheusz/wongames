@@ -67,7 +67,7 @@ export default function Footer() {
           <span>Lorem Ipsum</span>
           <span>Lorem, ipsum dolor.</span>
         </S.Column>
-        <S.Copyright>Won Games 2023 © All rights reserved.</S.Copyright>
+        <S.Copyright>Won Games 2023 &copy; All rights reserved.</S.Copyright>
       </S.Content>
     </S.Wrapper>
   );

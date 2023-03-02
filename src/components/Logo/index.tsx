@@ -4,9 +4,11 @@ export type LogoProps = {
   color?: "white" | "black";
   size?: "normal" | "large";
   hideOnMobile?: boolean;
+  id?: string;
 };
 
 export default function Logo({
+  id = "logo",
   color = "white",
   size = "normal",
   hideOnMobile = false
@@ -16,7 +18,7 @@ export default function Logo({
       <svg viewBox="0 0 158 48" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M0.0547602 15.2273L0.0192849 35.8723C0.0110436 40.6683 5.35471 43.5351 9.34604 40.8758L29.9416 27.1541L50.4899 40.9466C54.4721 43.6195 59.8255 40.7711 59.8338 35.9751L59.8681 15.9779C59.8817 8.09629 52.3194 2.41252 44.7523 4.61697L43.8791 4.87137C34.2791 7.66806 24.0679 7.5738 14.5211 4.60036C7.35072 2.36704 0.0676653 7.71714 0.0547602 15.2273Z"
-          fill="url(#paint0_linear_11_36)"
+          fill={`url(#paint0_linear_11_36_${id})`}
         />
         <path
           d="M30.1635 27.1596L24.13 22.8676C23.7654 22.6082 23.2697 22.9216 23.3478 23.3622L24.6409 30.6596L30.1635 27.1596Z"
@@ -102,7 +104,7 @@ export default function Logo({
         />
         <defs>
           <linearGradient
-            id="paint0_linear_11_36"
+            id={`paint0_linear_11_36_${id}`}
             x1="29.1592"
             y1="-7.39708"
             x2="30.1547"

@@ -17,7 +17,7 @@ export type GameCardProps = {
   onFav?: () => void;
 };
 
-export default function GameCard({
+const GameCard = ({
   title,
   developer,
   img,
@@ -28,7 +28,7 @@ export default function GameCard({
   ribbon,
   ribbonColor = "primary",
   ribbonSize = "normal"
-}: GameCardProps) {
+}: GameCardProps) => {
   return (
     <S.Wrapper>
       {!!ribbon && (
@@ -59,4 +59,6 @@ export default function GameCard({
       </S.Content>
     </S.Wrapper>
   );
-}
+};
+
+export default GameCard;

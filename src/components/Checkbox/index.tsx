@@ -11,7 +11,7 @@ export type CheckboxProps = {
   value?: string | ReadonlyArray<string> | number;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-export default function Checkbox({
+const Checkbox = ({
   onCheck,
   isChecked = false,
   label,
@@ -19,7 +19,7 @@ export default function Checkbox({
   labelColor = "white",
   value,
   ...props
-}: CheckboxProps) {
+}: CheckboxProps) => {
   const [checked, setChecked] = useState(isChecked);
 
   const onChange = () => {
@@ -46,4 +46,6 @@ export default function Checkbox({
       )}
     </S.Wrapper>
   );
-}
+};
+
+export default Checkbox;

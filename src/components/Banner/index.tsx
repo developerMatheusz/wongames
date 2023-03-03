@@ -13,7 +13,7 @@ export type BannerProps = {
   ribbonSize?: RibbonSizes;
 };
 
-export default function Banner({
+const Banner = ({
   img,
   title,
   subtitle,
@@ -22,7 +22,7 @@ export default function Banner({
   ribbon,
   ribbonColor = "primary",
   ribbonSize = "normal"
-}: BannerProps) {
+}: BannerProps) => {
   return (
     <S.Wrapper>
       {!!ribbon && (
@@ -40,4 +40,6 @@ export default function Banner({
       </S.Caption>
     </S.Wrapper>
   );
-}
+};
+
+export default Banner;

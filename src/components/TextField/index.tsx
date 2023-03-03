@@ -12,7 +12,7 @@ export type TextFieldProps = {
   error?: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-export default function TextField({
+const TextField = ({
   icon,
   iconPosition = "left",
   disabled = false,
@@ -22,7 +22,7 @@ export default function TextField({
   initialValue = "",
   onInput,
   ...props
-}: TextFieldProps) {
+}: TextFieldProps) => {
   const [value, setValue] = useState(initialValue);
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -49,4 +49,6 @@ export default function TextField({
       {!!error && <S.Error>{error}</S.Error>}
     </S.Wrapper>
   );
-}
+};
+
+export default TextField;

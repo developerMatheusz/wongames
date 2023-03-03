@@ -8,10 +8,12 @@ export type SliderProps = {
   settings: SliderSettings;
 };
 
-export default function Slider({ children, settings }: SliderProps) {
+const Slider = ({ children, settings }: SliderProps) => {
   return (
     <S.Wrapper>
       <SlickSlider {...settings}>{children}</SlickSlider>
     </S.Wrapper>
   );
-}
+};
+
+export default Slider;

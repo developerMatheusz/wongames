@@ -11,7 +11,7 @@ export type HighlightProps = {
   alignment?: "right" | "left";
 };
 
-export default function HighLight({
+const HighLight = ({
   title,
   subtitle,
   backgroundImage,
@@ -19,7 +19,7 @@ export default function HighLight({
   buttonLabel,
   buttonLink,
   alignment = "right"
-}: HighlightProps) {
+}: HighlightProps) => {
   return (
     <S.Wrapper alignment={alignment} backgroundImage={backgroundImage}>
       {!!floatImage && <S.FloatImage src={floatImage} alt={title} />}
@@ -32,4 +32,6 @@ export default function HighLight({
       </S.Content>
     </S.Wrapper>
   );
-}
+};
+
+export default HighLight;

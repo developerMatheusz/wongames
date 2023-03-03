@@ -3,7 +3,7 @@ import Heading from "../Heading";
 import Logo from "../Logo";
 import * as S from "./styles";
 
-export default function Footer() {
+const Footer = () => {
   return (
     <S.Wrapper>
       <Logo color="black" />
@@ -71,4 +71,6 @@ export default function Footer() {
       </S.Content>
     </S.Wrapper>
   );
-}
+};
+
+export default Footer;

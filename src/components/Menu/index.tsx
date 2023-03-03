@@ -7,12 +7,13 @@ import { Close as CloseIcon } from "@styled-icons/ionicons-outline/Close";
 import Logo from "../Logo";
 import Button from "../Button";
 import MediaMatch from "../MediaMatch";
+import Link from "next/link";
 
 type MenuProps = {
   username?: string;
 };
 
-export default function Menu({ username }: MenuProps) {
+const Menu = ({ username }: MenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -40,7 +41,9 @@ export default function Menu({ username }: MenuProps) {
         </S.IconWrapper>
         {!username && (
           <MediaMatch greaterThan="medium">
-            <Button>Sign in</Button>
+            <Link href="/sign-in" passHref>
+              <Button as="a">Sign in</Button>
+            </Link>
           </MediaMatch>
         )}
       </S.MenuGroup>
@@ -58,16 +61,20 @@ export default function Menu({ username }: MenuProps) {
         </S.MenuNav>
         {!username && (
           <S.RegisterBox>
-            <Button fullWidth size="large">
-              Log in now
-            </Button>
+            <Link href="/sign-in" passHref>
+              <Button fullWidth size="large" as="a">
+                Sign in
+              </Button>
+            </Link>
             <span>or</span>
-            <S.CreateAccount href="#" title="Sign In">
-              Sign Up
-            </S.CreateAccount>
+            <Link href="/sign-up" passHref>
+              <S.CreateAccount title="Sign Up">Sign Up</S.CreateAccount>
+            </Link>
           </S.RegisterBox>
         )}
       </S.MenuFull>
     </S.Wrapper>
   );
-}
+};
+
+export default Menu;

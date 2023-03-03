@@ -1,5 +1,6 @@
 import Heading from "@/components/Heading";
 import Logo from "@/components/Logo";
+import Link from "next/link";
 import * as S from "./styles";
 
 type AuthProps = {
@@ -12,9 +13,11 @@ export default function Auth({ title, children }: AuthProps) {
     <S.Wrapper>
       <S.BannerBlock>
         <S.BannerContent>
-          <Logo id="banner" />
+          <Link href="/">
+            <Logo id="banner" />
+          </Link>
           <div>
-            <Heading>All your favorite games in one place</Heading>
+            <Heading size="huge">All your favorite games in one place</Heading>
             <S.Subtitle>
               <strong>WON</strong> is the best and most complete gaming platform
             </S.Subtitle>
@@ -26,7 +29,9 @@ export default function Auth({ title, children }: AuthProps) {
       </S.BannerBlock>
       <S.Content>
         <S.ContentWrapper>
-          <Logo id="content" color="black" size="large" />
+          <Link href="/">
+            <Logo id="content" color="black" size="large" />
+          </Link>
           <Heading color="black" lineColor="secondary" lineLeft>
             {title}
           </Heading>

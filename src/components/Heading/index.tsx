@@ -8,17 +8,17 @@ export type HeadingProps = {
   lineLeft?: boolean;
   lineBottom?: boolean;
   lineColor?: LineColors;
-  size?: "small" | "medium";
+  size?: "small" | "medium" | "huge";
 };
 
-export default function Heading({
+const Heading = ({
   children,
   color = "white",
   lineLeft = false,
   lineBottom = false,
   lineColor = "primary",
   size = "medium"
-}: HeadingProps) {
+}: HeadingProps) => {
   return (
     <S.Wrapper
       color={color}
@@ -30,4 +30,6 @@ export default function Heading({
       {children}
     </S.Wrapper>
   );
-}
+};
+
+export default Heading;

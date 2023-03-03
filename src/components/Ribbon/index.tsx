@@ -9,14 +9,16 @@ export type RibbonProps = {
   size?: RibbonSizes;
 };
 
-export default function Ribbon({
+const Ribbon = ({
   children,
   color = "primary",
   size = "normal"
-}: RibbonProps) {
+}: RibbonProps) => {
   return (
     <S.Wrapper color={color} size={size}>
       {children}
     </S.Wrapper>
   );
-}
+};
+
+export default Ribbon;

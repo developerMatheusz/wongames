@@ -11,14 +11,14 @@ export type RadioProps = {
   value?: RadioValue;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-export default function Radio({
+const Radio = ({
   label,
   onCheck,
   labelColor = "white",
   labelFor = "",
   value,
   ...props
-}: RadioProps) {
+}: RadioProps) => {
   const onChange = () => {
     !!onCheck && onCheck(value);
   };
@@ -39,4 +39,6 @@ export default function Radio({
       )}
     </S.Wrapper>
   );
-}
+};
+
+export default Radio;

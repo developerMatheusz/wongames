@@ -7,12 +7,12 @@ export type LogoProps = {
   id?: string;
 };
 
-export default function Logo({
+const Logo = ({
   id = "logo",
   color = "white",
   size = "normal",
   hideOnMobile = false
-}: LogoProps) {
+}: LogoProps) => {
   return (
     <S.Wrapper color={color} size={size} hideOnMobile={hideOnMobile}>
       <svg viewBox="0 0 158 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -119,4 +119,6 @@ export default function Logo({
       </svg>
     </S.Wrapper>
   );
-}
+};
+
+export default Logo;

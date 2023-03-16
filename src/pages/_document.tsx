@@ -52,6 +52,21 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
             rel="stylesheet"
           />
+          <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+          />
+          <link rel="shortcut icon" href="/img/logo.svg" type="image/x-icon" />
+          <link
+            rel="apple-touch-icon"
+            href="/img/logo.svg"
+            type="image/x-icon"
+          />
+          <meta
+            name="description"
+            content="The best Game Stores in the world!"
+          />
         </Head>
         <body>
           <Main />

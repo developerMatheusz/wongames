@@ -1,5 +1,4 @@
-import styled from "styled-components";
-import { css } from "styled-components";
+import styled, { css } from "styled-components";
 import * as HeadingStyles from "@/components/Heading/styles";
 import * as LogoStyles from "@/components/Logo/styles";
 import media from "styled-media-query";

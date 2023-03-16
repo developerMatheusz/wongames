@@ -1,5 +1,5 @@
-import { ArrowBackIos as ArrowLeft } from "styled-icons/material-outlined";
-import { ArrowForwardIos as ArrowRight } from "styled-icons/material-outlined";
+import { ArrowBackIos as ArrowLeft } from "@styled-icons/material-outlined";
+import { ArrowForwardIos as ArrowRight } from "@styled-icons/material-outlined";
 import GameCard, { GameCardProps } from "../GameCard";
 import Slider, { SliderSettings } from "../Slider";
 import * as S from "./styles";

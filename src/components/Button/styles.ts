@@ -1,6 +1,5 @@
-import styled, { DefaultTheme } from "styled-components";
+import styled, { DefaultTheme, css } from "styled-components";
 import { darken } from "polished";
-import { css } from "styled-components";
 import { ButtonProps } from ".";
 
 export type WrapperProps = {

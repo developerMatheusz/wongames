@@ -18,7 +18,7 @@ const Showcase = ({ title, highlight, games }: ShowcaseProps) => (
       </Heading>
     )}
     {!!highlight && <HighLight {...highlight} />}
-    {!!games && <GameCardSlider items={games} />}
+    {!!games && <GameCardSlider items={games} color="black" />}
   </S.Wrapper>
 );
 

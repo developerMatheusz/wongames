@@ -14,7 +14,14 @@ export type ButtonProps = {
 } & ButtonTypes;
 
 const Button: React.ForwardRefRenderFunction<S.WrapperProps, ButtonProps> = (
-  { children, size, fullWidth = false, minimal = false, icon, ...props },
+  {
+    children,
+    size = "medium",
+    fullWidth = false,
+    minimal = false,
+    icon,
+    ...props
+  },
   ref
 ) => {
   return (

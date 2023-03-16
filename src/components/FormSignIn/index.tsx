@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Email, Lock } from "styled-icons/material-outlined";
+import { Email, Lock } from "@styled-icons/material-outlined";
 import Button from "../Button";
 import TextField from "../TextField";
 import { FormWrapper, FormLink } from "../Form";

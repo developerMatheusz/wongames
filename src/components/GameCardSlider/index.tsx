@@ -6,7 +6,7 @@ import * as S from "./styles";
 
 export type GameCardSliderProps = {
   items: GameCardProps[];
-  color?: "white" | "black";
+  color?: "white" | "black" | "secondary";
 };
 
 const settings: SliderSettings = {

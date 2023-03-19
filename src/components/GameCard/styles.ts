@@ -1,5 +1,4 @@
-import styled, { DefaultTheme } from "styled-components";
-import { css } from "styled-components";
+import styled, { DefaultTheme, css } from "styled-components";
 
 export const Wrapper = styled.article`
   ${({ theme }) => css`

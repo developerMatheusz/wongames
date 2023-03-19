@@ -1,9 +1,8 @@
-import styled from "styled-components";
-import { css } from "styled-components";
+import styled, { css } from "styled-components";
 import media from "styled-media-query";
 import * as RibbonStyles from "../Ribbon/styles";
 
-export const Wrapper = styled.main`
+export const Wrapper = styled.div`
   position: relative;
   ${media.lessThan("large")`
     ${RibbonStyles.Wrapper} {

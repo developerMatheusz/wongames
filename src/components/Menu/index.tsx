@@ -24,17 +24,13 @@ const Menu = ({ username }: MenuProps) => {
         </S.IconWrapper>
       </MediaMatch>
       <S.LogoWrapper>
-        <Link legacyBehavior href="/" passHref>
-          <a>
-            <Logo hideOnMobile />
-          </a>
+        <Link href="/">
+          <Logo hideOnMobile />
         </Link>
       </S.LogoWrapper>
       <MediaMatch greaterThan="medium">
         <S.MenuNav>
-          <Link href="/" passHref>
-            <S.MenuLink>Home</S.MenuLink>
-          </Link>
+          <S.MenuLink href="/">Home</S.MenuLink>
           <S.MenuLink href="#">Explore</S.MenuLink>
         </S.MenuNav>
       </MediaMatch>
@@ -47,18 +43,16 @@ const Menu = ({ username }: MenuProps) => {
         </S.IconWrapper>
         {!username && (
           <MediaMatch greaterThan="medium">
-            <Link legacyBehavior href="/sign-in" passHref>
-              <Button as="a">Sign in</Button>
-            </Link>
+            <Button href="/sign-in" as="a">
+              Sign in
+            </Button>
           </MediaMatch>
         )}
       </S.MenuGroup>
       <S.MenuFull aria-hidden={!isOpen} isOpen={isOpen}>
         <CloseIcon aria-label="Close Menu" onClick={() => setIsOpen(false)} />
         <S.MenuNav>
-          <Link href="/" passHref>
-            <S.MenuLink>Home</S.MenuLink>
-          </Link>
+          <S.MenuLink href="/">Home</S.MenuLink>
           <S.MenuLink href="#">Explore</S.MenuLink>
           {!!username && (
             <>
@@ -69,15 +63,13 @@ const Menu = ({ username }: MenuProps) => {
         </S.MenuNav>
         {!username && (
           <S.RegisterBox>
-            <Link legacyBehavior href="/sign-in" passHref>
-              <Button fullWidth size="large" as="a">
-                Sign in
-              </Button>
-            </Link>
+            <Button href="/sign-in" fullWidth size="large" as="a">
+              Sign in
+            </Button>
             <span>or</span>
-            <Link legacyBehavior href="/sign-up" passHref>
-              <S.CreateAccount title="Sign Up">Sign Up</S.CreateAccount>
-            </Link>
+            <S.CreateAccount href="/sign-up" title="Sign Up">
+              Sign Up
+            </S.CreateAccount>
           </S.RegisterBox>
         )}
       </S.MenuFull>

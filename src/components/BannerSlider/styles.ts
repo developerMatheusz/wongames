@@ -1,9 +1,8 @@
-import styled from "styled-components";
-import { css } from "styled-components";
+import styled, { css } from "styled-components";
 import media from "styled-media-query";
 import * as BannerStyles from "../Banner/styles";
 
-export const Wrapper = styled.section`
+export const Wrapper = styled.div`
   ${({ theme }) => css`
     .slick-dots {
       list-style: none;

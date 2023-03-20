@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Button from "../Button";
 import * as S from "./styles";
 
@@ -19,9 +18,9 @@ const Empty = ({ title, description, hasLink }: EmptyProps) => {
       <S.Title>{title}</S.Title>
       <S.Description>{description}</S.Description>
       {hasLink && (
-        <Link href="/" passHref>
-          <Button as="a">Go back to store</Button>
-        </Link>
+        <Button href="/" as="a">
+          Go back to store
+        </Button>
       )}
     </S.Wrapper>
   );

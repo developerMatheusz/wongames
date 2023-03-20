@@ -16,3 +16,8 @@ export default {
 const Template: ComponentStory<typeof Menu> = (args) => <Menu {...args} />;
 
 export const Default = Template.bind({});
+export const Logged = Template.bind({});
+
+Logged.args = {
+  username: "Jhon Doe"
+};

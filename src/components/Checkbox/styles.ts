@@ -37,12 +37,16 @@ export const Input = styled.input`
     &:focus {
       box-shadow: 0 0 0.5rem ${theme.colors.primary};
     }
+    &:hover {
+      border-color: ${theme.colors.gray};
+      transition: ${theme.transition.fast};
+    }
     &:checked {
       border-color: ${theme.colors.primary};
       background: ${theme.colors.primary};
-    }
-    &:before {
-      opacity: 1;
+      &:before {
+        opacity: 1;
+      }
     }
   `}
 `;

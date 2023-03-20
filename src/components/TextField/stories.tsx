@@ -8,15 +8,18 @@ export default {
   component: TextField,
   args: {
     label: "E-mail",
-    labelFor: "Email",
+    name: "email",
     icon: <Email />,
-    id: "Email",
     initialValue: "",
-    placeholder: "example@example.com"
+    placeholder: "example@example.com",
+    disabled: false
   },
   argTypes: {
     onInput: {
       action: "changed"
+    },
+    icon: {
+      type: ""
     }
   },
   parameters: {

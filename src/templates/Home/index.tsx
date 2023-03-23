@@ -9,12 +9,15 @@ import * as S from "./styles";
 
 export type HomeTemplateProps = {
   banners: BannerProps[];
+  newGamesTitle: string;
   newGames: GameCardProps[];
   mostPopularHightlight: HighlightProps;
+  mostPopularGamesTitle: string;
   mostPopularGames: GameCardProps[];
+  upcomingGamesTitle: string;
   upcommingGames: GameCardProps[];
   upcommingHighlight: HighlightProps;
-  upcommingMoreGames: GameCardProps[];
+  freeGamesTitle: string;
   freeGames: GameCardProps[];
   freeHighlight: HighlightProps;
 };
@@ -26,9 +29,12 @@ export default function Home({
   mostPopularGames,
   upcommingGames,
   upcommingHighlight,
-  upcommingMoreGames,
   freeGames,
-  freeHighlight
+  freeHighlight,
+  newGamesTitle,
+  mostPopularGamesTitle,
+  upcomingGamesTitle,
+  freeGamesTitle
 }: HomeTemplateProps) {
   return (
     <Base>
@@ -38,19 +44,20 @@ export default function Home({
         </S.SectionBanner>
       </Container>
       <S.SectionNews>
-        <Showcase title="News" games={newGames} />
+        <Showcase title={newGamesTitle} games={newGames} />
       </S.SectionNews>
       <Showcase
-        title="Most Popular"
+        title={mostPopularGamesTitle}
         highlight={mostPopularHightlight}
         games={mostPopularGames}
       />
-      <S.SectionUpcoming>
-        <Showcase title="Upcomming" games={upcommingGames} />
-        <Showcase highlight={upcommingHighlight} games={upcommingMoreGames} />
-      </S.SectionUpcoming>
       <Showcase
-        title="Free games"
+        title={upcomingGamesTitle}
+        games={upcommingGames}
+        highlight={upcommingHighlight}
+      />
+      <Showcase
+        title={freeGamesTitle}
         highlight={freeHighlight}
         games={freeGames}
       />

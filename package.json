@@ -1,8 +1,9 @@
 {
   "name": "wongames",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
   "scripts": {
+    "typecheck": "tsc --project tsconfig.json --noEmit",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

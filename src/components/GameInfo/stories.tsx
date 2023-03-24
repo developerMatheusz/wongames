@@ -6,13 +6,15 @@ import mockGame from "./mock";
 export default {
   title: "GameInfo",
   component: GameInfo,
+  args: {
+    mockGame
+  },
   parameters: {
     layout: "fullscreen",
     backgrounds: {
       default: "won-dark"
     }
-  },
-  args: mockGame
+  }
 } as ComponentMeta<typeof GameInfo>;
 
 const Template: ComponentStory<typeof GameInfo> = (args) => (

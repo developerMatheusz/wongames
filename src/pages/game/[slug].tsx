@@ -1,10 +1,11 @@
 import Game, { GameTemplateProps } from "@/templates/Game";
-import gamesMock from "@/components/GameCardSlider/mock";
-import highlightMock from "@/components/Highlight/mock";
 import { useRouter } from "next/router";
 import { initializeApollo } from "@/utils/apollo";
 import { QUERY_GAMES, QUERY_GAME_BY_SLUG } from "@/graphql/queries/games";
 import { GetStaticProps } from "next";
+import { QUERY_RECOMMENDED } from "@/graphql/queries/recommended";
+import { QUERY_UPCOMING } from "@/graphql/queries/upcoming";
+import { gamesMapper, highlightMapper } from "@/utils/mappers";
 
 const apolloClient = initializeApollo();
 
@@ -25,11 +26,11 @@ export async function getStaticPaths() {
     }
   });
 
-  const slugPaths = data.games.data.map((game) => ({
+  const slugPaths = data.games.data.map((game: any) => ({
     slug: game.attributes.slug
   }));
 
-  const paths = slugPaths.map(({ slug }) => ({
+  const paths = slugPaths.map(({ slug }: any) => ({
     params: { slug }
   }));
 
@@ -40,6 +41,7 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  //Get game data
   const { data } = await apolloClient.query({
     query: QUERY_GAME_BY_SLUG,
     variables: {
@@ -52,25 +54,45 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
 
   const game = data.games.data[0];
-  const gallery = game.attributes.gallery.data.map((src) => ({
+  const gallery = game.attributes.gallery.data.map((src: any) => ({
     src: src.attributes
   }));
-  const platforms = game.attributes.platforms.data.map((platform) => ({
+  const platforms = game.attributes.platforms.data.map((platform: any) => ({
     name: platform.attributes.name
   }));
-  const genres = game.attributes.categories.data.map((categorie) => ({
+  const genres = game.attributes.categories.data.map((categorie: any) => ({
     name: categorie.attributes.name
   }));
 
+  //Get recommended games
+  const { data: games } = await apolloClient.query({
+    query: QUERY_RECOMMENDED
+  });
+
+  const recommendedGames = games.recommended.data.attributes.section.games.data;
+  const recommendedTitle = games.recommended.data.attributes.section.title;
+
+  //Get upcoming games and highlight
+  const TODAY = new Date().toISOString().slice(0, 10);
+  const { data: upcoming } = await apolloClient.query({
+    query: QUERY_UPCOMING,
+    variables: { date: TODAY }
+  });
+
+  const upcomingGames = upcoming.upcomingGames.data;
+  const showcase = upcoming.showcase.data.attributes.upcomingGames.highlight;
+  const upcomingTitle = upcoming.showcase.data.attributes.upcomingGames.title;
+
   return {
     props: {
+      revalidate: 60,
       cover: `http://localhost:1337${game.attributes.cover?.data.attributes.src}`,
       gameInfo: {
         title: game.attributes.name,
         price: game.attributes.price,
         description: game.attributes.short_description
       },
-      gallery: gallery.map((image) => ({
+      gallery: gallery.map((image: any) => ({
         src: `http://localhost:1337${image.src.src}`,
         label: image.src.label
       })),
@@ -78,14 +100,16 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       details: {
         developer: game.attributes.developers.data[0].attributes.name,
         releaseDate: game.attributes.release_date,
-        platforms: platforms.map((platform) => platform.name),
+        platforms: platforms.map((platform: any) => platform.name),
         publisher: game.attributes.publisher.data.attributes.name,
         rating: game.attributes.rating,
-        genres: genres.map((category) => category.name),
-        upcommingGames: gamesMock,
-        upcommingHighlight: highlightMock,
-        recommendedGames: gamesMock
-      }
+        genres: genres.map((category: any) => category.name)
+      },
+      upcomingTitle: upcomingTitle,
+      upcommingGames: gamesMapper(upcomingGames),
+      upcommingHighlight: highlightMapper(showcase),
+      recommendedTitle: recommendedTitle,
+      recommendedGames: gamesMapper(recommendedGames)
     }
   };
 };

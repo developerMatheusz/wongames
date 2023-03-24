@@ -32,7 +32,7 @@ export const WithoutGames = Template.bind({});
 
 Default.args = {
   title: "Most Popular",
-  hightlight: hightlightMock,
+  highlight: hightlightMock,
   games: gamesMock
 };
 
@@ -48,5 +48,5 @@ WithoutHighlight.args = {
 
 WithoutGames.args = {
   title: "Most Popular",
-  hightlight: hightlightMock
+  highlight: hightlightMock
 };

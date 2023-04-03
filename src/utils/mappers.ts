@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export const bannerMapper = (banners: any) => {
   return banners.map((banner: any) => ({
     img: `http://localhost:1337${banner.attributes.image?.data.attributes.url}`,

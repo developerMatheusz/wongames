@@ -7,7 +7,8 @@ export default {
   title: "ExploreSidebar",
   component: ExploreSidebar,
   args: {
-    items
+    items,
+    onFilter: () => console.log("filter")
   },
   parameters: {
     layout: "fullscreen",
@@ -19,7 +20,13 @@ export default {
 
 const Template: ComponentStory<typeof ExploreSidebar> = (args) => (
   <div style={{ padding: 16, maxWidth: 320 }}>
-    <ExploreSidebar {...args} />
+    <ExploreSidebar
+      {...args}
+      initialValues={{
+        platforms: ["windows", "linux"],
+        sort_by: "low-to-high"
+      }}
+    />
   </div>
 );
 

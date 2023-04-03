@@ -1,4 +1,4 @@
-import formatPrice from "@/utils/format-price";
+import formatPrice from "../../utils/format-price";
 import { FavoriteBorder, Favorite } from "@styled-icons/material-outlined";
 import { AddShoppingCart } from "@styled-icons/material-outlined";
 import Button from "../Button";

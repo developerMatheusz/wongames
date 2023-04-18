@@ -1,36 +1,5 @@
 export default [
   {
-    title: "Price",
-    name: "price",
-    type: "checkbox",
-    fields: [
-      {
-        label: "Under $50",
-        name: "under-50"
-      },
-      {
-        label: "Under $100",
-        name: "under-100"
-      },
-      {
-        label: "Under $150",
-        name: "under-150"
-      },
-      {
-        label: "Under $200",
-        name: "under-200"
-      },
-      {
-        label: "Free",
-        name: "free"
-      },
-      {
-        label: "Discounted",
-        name: "discounted"
-      }
-    ]
-  },
-  {
     title: "Sort by",
     name: "sort_by",
     type: "radio",

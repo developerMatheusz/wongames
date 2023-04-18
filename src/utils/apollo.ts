@@ -1,6 +1,10 @@
-import { ApolloClient, HttpLink, NormalizedCacheObject } from "@apollo/client";
+import {
+  ApolloClient,
+  HttpLink,
+  InMemoryCache,
+  NormalizedCacheObject
+} from "@apollo/client";
 import { useMemo } from "react";
-import apolloCache from "./apolloCache";
 
 let apolloClient: ApolloClient<NormalizedCacheObject | null>;
 
@@ -8,7 +12,7 @@ function createApolloClient() {
   return new ApolloClient({
     ssrMode: typeof window === "undefined",
     link: new HttpLink({ uri: "http://localhost:1337/graphql" }),
-    cache: apolloCache
+    cache: new InMemoryCache()
   });
 }
 

@@ -11,20 +11,6 @@ export default function Games(props: GamesTemplateProps) {
 export async function getServerSideProps({ query }: GetServerSidePropsContext) {
   const apolloClient = initializeApollo();
 
-  const filterPrice = {
-    title: "Price",
-    name: "price",
-    type: "radio",
-    fields: [
-      { label: "Free", name: 0 },
-      { label: "Under $50", name: 50 },
-      { label: "Under $100", name: 100 },
-      { label: "Under $150", name: 150 },
-      { label: "Under $250", name: 250 },
-      { label: "Under $500", name: 500 }
-    ]
-  };
-
   const filterPlatforms = {
     title: "Platforms",
     name: "platforms",
@@ -66,24 +52,21 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext) {
     ]
   };
 
-  const filterItems = [
-    filterSort,
-    filterPrice,
-    filterPlatforms,
-    filterCategories
-  ];
+  const filterItems = [filterSort, filterPlatforms, filterCategories];
 
   await apolloClient.query({
     query: QUERY_GAMES,
     variables: {
-      filters: parseQueryStringToWhere({ queryString: query, filterItems }),
+      filters: parseQueryStringToWhere({
+        queryString: query,
+        filterItems
+      }),
       sort: query.sort as string | null
     }
   });
 
   return {
     props: {
-      initialApolloState: apolloClient.cache.extract(),
       filterItems
     }
   };

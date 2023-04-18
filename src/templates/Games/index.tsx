@@ -22,12 +22,13 @@ const GamesTemplate = ({ filterItems }: GamesTemplateProps) => {
 
   const { data, loading } = useQueryGames({
     variables: {
-      filters: parseQueryStringToWhere({ queryString: query, filterItems }),
+      filters: parseQueryStringToWhere({
+        queryString: query,
+        filterItems
+      }),
       sort: query.sort as string | null
     }
   });
-
-  console.log(data.games.data);
 
   const handleFilter = (items: ParsedUrlQueryInput) => {
     push({
@@ -53,10 +54,10 @@ const GamesTemplate = ({ filterItems }: GamesTemplateProps) => {
           <p>Loading...</p>
         ) : (
           <section>
-            {data.games.data.length ? (
+            {data.games.data?.length ? (
               <>
                 <Grid>
-                  {data.games.data.map((game: any) => (
+                  {data?.games.data.map((game: any) => (
                     <GameCard
                       key={game.attributes.slug}
                       title={game.attributes.name}

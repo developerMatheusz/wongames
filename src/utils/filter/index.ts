@@ -19,7 +19,9 @@ export const parseQueryStringToWhere = ({
       const item = filterItems?.find((item) => item.name === key);
       const isCheckbox = item?.type === "checkbox";
 
-      obj[key] = isCheckbox ? queryString[key] : { name: queryString[key] };
+      obj[key] = !isCheckbox
+        ? queryString[key]
+        : { name: { in: queryString[key] } };
     });
 
   return obj;

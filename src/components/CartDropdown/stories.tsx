@@ -1,15 +1,10 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import CartDropdown from ".";
-import items from "../CartList/mock";
 
 export default {
   title: "CartDropdown",
   component: CartDropdown,
-  args: {
-    items,
-    total: "R$ 300,00"
-  },
   parameters: {
     layout: "fullscreen",
     backgrounds: {
@@ -18,9 +13,9 @@ export default {
   }
 } as unknown as ComponentMeta<typeof CartDropdown>;
 
-const Template: ComponentStory<typeof CartDropdown> = (args) => (
+const Template: ComponentStory<typeof CartDropdown> = () => (
   <div style={{ maxWidth: "98%", display: "flex", justifyContent: "flex-end" }}>
-    <CartDropdown {...args} />
+    <CartDropdown />
   </div>
 );
 

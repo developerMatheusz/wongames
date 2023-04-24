@@ -1,11 +1,12 @@
-import Game, { GameTemplateProps } from "@/templates/Game";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import Game, { GameTemplateProps } from "../../templates/Game";
 import { useRouter } from "next/router";
-import { initializeApollo } from "@/utils/apollo";
-import { QUERY_GAMES, QUERY_GAME_BY_SLUG } from "@/graphql/queries/games";
+import { initializeApollo } from "../../utils/apollo";
+import { QUERY_GAMES, QUERY_GAME_BY_SLUG } from "../../graphql/queries/games";
 import { GetStaticProps } from "next";
-import { QUERY_RECOMMENDED } from "@/graphql/queries/recommended";
-import { QUERY_UPCOMING } from "@/graphql/queries/upcoming";
-import { gamesMapper, highlightMapper } from "@/utils/mappers";
+import { QUERY_RECOMMENDED } from "../../graphql/queries/recommended";
+import { QUERY_UPCOMING } from "../../graphql/queries/upcoming";
+import { gamesMapper, highlightMapper } from "../../utils/mappers";
 
 const apolloClient = initializeApollo();
 
@@ -46,7 +47,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     query: QUERY_GAME_BY_SLUG,
     variables: {
       slug: `${params?.slug}`
-    }
+    },
+    fetchPolicy: "no-cache"
   });
 
   if (!data.games.data.length) {
@@ -84,8 +86,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const upcomingTitle = upcoming.showcase.data.attributes.upcomingGames.title;
 
   return {
+    revalidate: 60,
     props: {
-      revalidate: 60,
       cover: `http://localhost:1337${game.attributes.cover?.data.attributes.src}`,
       gameInfo: {
         title: game.attributes.name,

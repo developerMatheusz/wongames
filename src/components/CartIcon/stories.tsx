@@ -13,14 +13,11 @@ export default {
   }
 } as unknown as ComponentMeta<typeof CartIcon>;
 
-const Template: ComponentStory<typeof CartIcon> = (args) => (
-  <CartIcon {...args} />
-);
+const Template: ComponentStory<typeof CartIcon> = () => <CartIcon />;
 
 export const Default = Template.bind({});
 export const WithItems = Template.bind({});
 
-Default.args = {};
 WithItems.args = {
   quantity: 3
 };

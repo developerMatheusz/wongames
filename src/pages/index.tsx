@@ -1,7 +1,7 @@
 import Home, { HomeTemplateProps } from "../templates/Home";
-import { initializeApollo } from "@/utils/apollo";
+import { initializeApollo } from "../utils/apollo";
 import { QUERY_HOME } from "../graphql/queries/home";
-import { bannerMapper, gamesMapper, highlightMapper } from "@/utils/mappers";
+import { bannerMapper, gamesMapper, highlightMapper } from "../utils/mappers";
 
 export default function Index(props: HomeTemplateProps) {
   return <Home {...props} />;
@@ -17,7 +17,8 @@ export async function getStaticProps() {
     query: QUERY_HOME,
     variables: {
       date: TODAY
-    }
+    },
+    fetchPolicy: "no-cache"
   });
 
   const banners_ = banners.data;
@@ -30,8 +31,8 @@ export async function getStaticProps() {
   const popularGames = sections_.attributes.popularGames;
 
   return {
+    revalidate: 10,
     props: {
-      revalidate: 60,
       banners: bannerMapper(banners_),
       newGamesTitle: sections_.attributes.newGames.title,
       newGames: gamesMapper(newGames_),

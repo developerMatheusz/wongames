@@ -1,6 +1,6 @@
-import { StoryFn } from "@storybook/addons";
 import React from "react";
 import { ThemeProvider } from "styled-components";
+import { CartContext, CartContextDefaultValues } from "../src/hooks/use-cart";
 import GlobalStyles from "styles/global";
 import theme from "styles/theme";
 
@@ -20,10 +20,18 @@ export const parameters = {
   }
 };
 
-const withGlobalStyle = (storyFn: StoryFn) => (
+const withGlobalStyle = (storyFn, context) => (
   <ThemeProvider theme={theme}>
-    <GlobalStyles removeBg />
-    {storyFn()}
+    <CartContext.Provider
+      value={{
+        ...CartContextDefaultValues,
+        ...(context?.args?.cartContextValue || {}),
+        ...context.args
+      }}
+    >
+      <GlobalStyles removeBg />
+      {storyFn()}
+    </CartContext.Provider>
   </ThemeProvider>
 );
 

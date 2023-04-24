@@ -1,20 +1,20 @@
 import formatPrice from "../../utils/format-price";
-import {
-  AddShoppingCart,
-  FavoriteBorder
-} from "@styled-icons/material-outlined";
+import { FavoriteBorder } from "@styled-icons/material-outlined";
 import Button from "../Button";
 import Heading from "../Heading";
 import Ribbon from "../Ribbon";
 import * as S from "./styles";
+import React from "react";
+import CartButton from "../CartButton";
 
 export type GameInfoProps = {
+  id: string;
   title: string;
   description: string;
   price: number;
 };
 
-const GameInfo = ({ title, description, price }: GameInfoProps) => {
+const GameInfo = ({ id, title, description, price }: GameInfoProps) => {
   return (
     <S.Wrapper>
       <Heading color="black" lineBottom>
@@ -23,9 +23,7 @@ const GameInfo = ({ title, description, price }: GameInfoProps) => {
       <Ribbon color="secondary">{formatPrice(price)}</Ribbon>
       <S.Description>{description}</S.Description>
       <S.ButtonsWrapper>
-        <Button icon={<AddShoppingCart />} size="large">
-          Add to cart
-        </Button>
+        <CartButton id={id} size="large" hasText />
         <Button icon={<FavoriteBorder />} size="large" minimal>
           Wishlist
         </Button>

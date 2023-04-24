@@ -24,5 +24,12 @@ const Template: ComponentStory<typeof GameInfo> = (args) => (
 );
 
 export const Default = Template.bind({});
+export const IsInCart = Template.bind({});
 
-Default.args = {};
+Default.args = {
+  price: 330
+};
+IsInCart.args = {
+  isInCart: () => true,
+  price: 330
+};

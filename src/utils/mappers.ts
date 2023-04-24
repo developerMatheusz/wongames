@@ -1,3 +1,5 @@
+import formatPrice from "./format-price";
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export const bannerMapper = (banners: any) => {
   return banners.map((banner: any) => ({
@@ -53,4 +55,15 @@ export const highlightMapper = (highlight: any) => {
       alignment: highlight.alignment
     }
   );
+};
+
+export const cartMapper = (games: any) => {
+  return games
+    ? games.map((game: any) => ({
+        id: game.attributes.id,
+        img: `http://localhost:1337/${game.attributes.cover.data.attributes.url}`,
+        price: formatPrice(game.attributes.price),
+        title: game.attributes.name
+      }))
+    : [];
 };

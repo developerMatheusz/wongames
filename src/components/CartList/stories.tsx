@@ -1,16 +1,14 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import CartList from ".";
-import mockItem from "./mock";
 
 export default {
   title: "CartList",
   component: CartList,
-  args: {
-    items: mockItem,
-    total: "R$ 330,00"
-  },
   argTypes: {
+    cartContextValue: {
+      type: ""
+    },
     items: {
       type: ""
     }
@@ -37,7 +35,7 @@ const TemplateWithButton: ComponentStory<typeof CartList> = (args) => (
 
 const TemplateEmpty: ComponentStory<typeof CartList> = () => (
   <div style={{ maxWidth: 800 }}>
-    <CartList items={[]} />
+    <CartList />
   </div>
 );
 

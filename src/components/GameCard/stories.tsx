@@ -36,10 +36,16 @@ const Template: ComponentStory<typeof GameCard> = (args) => (
 
 export const Default = Template.bind({});
 
+export const IsInCart = Template.bind({});
+
 export const WithRibbon = Template.bind({});
 
 WithRibbon.args = {
   ribbon: "20% OFF",
   ribbonSize: "small",
   ribbonColor: "primary"
+};
+
+IsInCart.args = {
+  isInCart: () => true
 };

@@ -6,6 +6,7 @@ import {
 } from "styled-icons/material-outlined";
 import { ChevronDown } from "@styled-icons/boxicons-regular/ChevronDown";
 import * as S from "./styles";
+import React from "react";
 
 export type UserDropdownProps = {
   username: string;

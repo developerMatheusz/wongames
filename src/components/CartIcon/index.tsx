@@ -1,6 +1,7 @@
 import { ShoppingCart } from "styled-icons/material-outlined";
 import * as S from "./styles";
 import { useCart } from "../../hooks/use-cart";
+import React from "react";
 
 const CartIcon = () => {
   const { quantity } = useCart();

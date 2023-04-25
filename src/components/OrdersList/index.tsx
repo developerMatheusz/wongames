@@ -2,6 +2,7 @@ import Empty from "../Empty";
 import GameItem, { GameItemProps } from "../GameItem";
 import Heading from "../Heading";
 import * as S from "./styles";
+import React from "react";
 
 export type OrdersListProps = {
   items?: GameItemProps[];

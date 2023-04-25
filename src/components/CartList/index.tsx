@@ -3,6 +3,7 @@ import GameItem from "../GameItem";
 import Button from "../Button";
 import Empty from "../Empty";
 import { useCart } from "../../hooks/use-cart";
+import React from "react";
 
 export type CartListProps = {
   hasButton?: boolean;
@@ -12,10 +13,10 @@ const CartList = ({ hasButton = false }: CartListProps) => {
   const { items, total } = useCart();
 
   return (
-    <S.Wrapper isEmpty={!items.length}>
-      {items.length ? (
+    <S.Wrapper isEmpty={!items?.length}>
+      {items?.length ? (
         <>
-          {items.map((item) => (
+          {items?.map((item) => (
             <GameItem key={item.title} {...item} />
           ))}
           <S.Footer>

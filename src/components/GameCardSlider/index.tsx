@@ -3,6 +3,7 @@ import { ArrowForwardIos as ArrowRight } from "@styled-icons/material-outlined";
 import GameCard, { GameCardProps } from "../GameCard";
 import Slider, { SliderSettings } from "../Slider";
 import * as S from "./styles";
+import React from "react";
 
 export type GameCardSliderProps = {
   items: GameCardProps[];

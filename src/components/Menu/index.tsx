@@ -10,6 +10,7 @@ import Link from "next/link";
 import CartDropdown from "../CartDropdown";
 import CartIcon from "../CartIcon";
 import UserDropdown from "../UserDropdown";
+import React from "react";
 
 type MenuProps = {
   username?: string;

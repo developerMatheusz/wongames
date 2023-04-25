@@ -5,6 +5,7 @@ import {
   FormatListBulleted
 } from "styled-icons/material-outlined";
 import * as S from "./styles";
+import React from "react";
 
 export type ProfileMenuProps = {
   activeLink?: "/profile/me" | "/profile/cards" | "/profile/orders" | string;

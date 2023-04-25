@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { InputHTMLAttributes } from "react";
 import * as S from "./styles";
+import React from "react";
 
 export type CheckboxProps = {
   onCheck?: (status: boolean) => void;

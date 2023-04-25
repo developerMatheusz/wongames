@@ -6,6 +6,7 @@ import theme from "../styles/theme";
 import Head from "next/head";
 import { useApollo } from "../utils/apollo";
 import { CartProvider } from "../hooks/use-cart";
+import React from "react";
 
 const App = ({ Component, pageProps }: AppProps) => {
   const client = useApollo(pageProps.initialApolloState);

@@ -1,11 +1,12 @@
-import { Container } from "@/components/Container";
-import { BannerProps } from "@/components/Banner";
-import { GameCardProps } from "@/components/GameCard";
-import { HighlightProps } from "@/components/Highlight";
-import BannerSlider from "@/components/BannerSlider";
-import Showcase from "@/components/Showcase";
+import { Container } from "../../components/Container";
+import { BannerProps } from "../../components/Banner";
+import { GameCardProps } from "../../components/GameCard";
+import { HighlightProps } from "../../components/Highlight";
+import BannerSlider from "../../components/BannerSlider";
+import Showcase from "../../components/Showcase";
 import Base from "../Base";
 import * as S from "./styles";
+import React from "react";
 
 export type HomeTemplateProps = {
   banners: BannerProps[];

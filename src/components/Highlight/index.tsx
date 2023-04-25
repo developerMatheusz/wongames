@@ -1,5 +1,6 @@
 import Button from "../Button";
 import * as S from "./styles";
+import React from "react";
 
 export type HighlightProps = {
   title: string;

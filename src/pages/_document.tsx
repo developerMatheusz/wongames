@@ -7,6 +7,7 @@ import Document, {
   Head
 } from "next/document";
 import { ServerStyleSheet } from "styled-components";
+import React from "react";
 
 export default class MyDocument extends Document {
   static async getInitialProps(

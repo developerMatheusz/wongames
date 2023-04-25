@@ -20,6 +20,7 @@ export const gamesMapper = (newGame: any) => {
   return (
     newGame &&
     newGame.map((game: any) => ({
+      id: game.id,
       title: game.attributes.name,
       slug: game.attributes.slug,
       developer: game.attributes.developers.data[0].attributes.name,
@@ -34,6 +35,7 @@ export const gamesExplorerMapper = (games: any) => {
   return (
     games &&
     games.map((game: any) => ({
+      id: game.id,
       title: game.attributes.name,
       slug: game.attributes.slug,
       developer: game.attributes.developers.data[0].attributes.name,
@@ -58,12 +60,10 @@ export const highlightMapper = (highlight: any) => {
 };
 
 export const cartMapper = (games: any) => {
-  return games
-    ? games.map((game: any) => ({
-        id: game.attributes.id,
-        img: `http://localhost:1337/${game.attributes.cover.data.attributes.url}`,
-        price: formatPrice(game.attributes.price),
-        title: game.attributes.name
-      }))
-    : [];
+  return games?.map((game: any) => ({
+    id: game.id,
+    img: `http://localhost:1337${game.attributes.cover.data.attributes.url}`,
+    price: formatPrice(game.attributes.price),
+    title: game.attributes.name
+  }));
 };

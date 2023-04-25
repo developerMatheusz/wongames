@@ -1,4 +1,5 @@
 import * as S from "./styles";
+import React from "react";
 
 export type RibbonColors = "primary" | "secondary";
 export type RibbonSizes = "normal" | "small";

@@ -7,6 +7,7 @@ import { GetStaticProps } from "next";
 import { QUERY_RECOMMENDED } from "../../graphql/queries/recommended";
 import { QUERY_UPCOMING } from "../../graphql/queries/upcoming";
 import { gamesMapper, highlightMapper } from "../../utils/mappers";
+import React from "react";
 
 const apolloClient = initializeApollo();
 

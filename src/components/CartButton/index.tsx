@@ -1,10 +1,11 @@
-import React from "react";
 import {
   AddShoppingCart,
   RemoveShoppingCart
 } from "@styled-icons/material-outlined";
+
 import Button, { ButtonProps } from "../Button";
 import { useCart } from "../../hooks/use-cart";
+import React from "react";
 
 type CartButtonProps = {
   id: string;
@@ -21,15 +22,10 @@ const CartButton = ({
 
   return (
     <Button
-      icon={
-        isInCart(id) ? (
-          <RemoveShoppingCart aria-label="Remove from cart" />
-        ) : (
-          <AddShoppingCart aria-label="Add to cart" />
-        )
-      }
+      icon={isInCart(id) ? <RemoveShoppingCart /> : <AddShoppingCart />}
       size={size}
       onClick={() => (isInCart(id) ? removeFromCart(id) : addToCart(id))}
+      aria-label={ButtonText}
     >
       {hasText && ButtonText}
     </Button>

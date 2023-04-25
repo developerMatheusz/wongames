@@ -1,13 +1,14 @@
 import * as S from "./styles";
 import Base from "../Base";
-import GameInfo, { GameInfoProps } from "@/components/GameInfo";
-import Gallery, { GalleryImageProps } from "@/components/Gallery";
-import TextContent from "@/components/TextContent";
-import GameDetails, { GameDetailsProps } from "@/components/GameDetails";
-import { GameCardProps } from "@/components/GameCard";
-import { HighlightProps } from "@/components/Highlight";
-import Showcase from "@/components/Showcase";
-import { Divider } from "@/components/Divider";
+import GameInfo, { GameInfoProps } from "../../components/GameInfo";
+import Gallery, { GalleryImageProps } from "../../components/Gallery";
+import TextContent from "../../components/TextContent";
+import GameDetails, { GameDetailsProps } from "../../components/GameDetails";
+import { GameCardProps } from "../../components/GameCard";
+import { HighlightProps } from "../../components/Highlight";
+import Showcase from "../../components/Showcase";
+import { Divider } from "../../components/Divider";
+import React from "react";
 
 export type GameTemplateProps = {
   cover: string;

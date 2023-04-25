@@ -7,6 +7,7 @@ export const QUERY_HOME = gql`
   query QueryHome($date: Date!) {
     banners {
       data {
+        id
         attributes {
           ...BannerFragment
         }
@@ -19,6 +20,7 @@ export const QUERY_HOME = gql`
       pagination: { limit: 8 }
     ) {
       data {
+        id
         attributes {
           ...GameFragment
         }
@@ -31,6 +33,7 @@ export const QUERY_HOME = gql`
       pagination: { limit: 8 }
     ) {
       data {
+        id
         attributes {
           ...GameFragment
         }
@@ -43,6 +46,7 @@ export const QUERY_HOME = gql`
       pagination: { limit: 8 }
     ) {
       data {
+        id
         attributes {
           ...GameFragment
         }
@@ -66,6 +70,7 @@ export const QUERY_HOME = gql`
             }
             games {
               data {
+                id
                 attributes {
                   ...GameFragment
                 }

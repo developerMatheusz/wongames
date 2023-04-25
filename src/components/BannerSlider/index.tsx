@@ -1,6 +1,7 @@
 import Banner, { BannerProps } from "../Banner";
 import Slider, { SliderSettings } from "../Slider";
 import * as S from "./styles";
+import React from "react";
 
 export type BannerSliderProps = {
   items: BannerProps[];

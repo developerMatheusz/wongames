@@ -1,5 +1,6 @@
 import { InputHTMLAttributes, useState } from "react";
 import * as S from "./styles";
+import React from "react";
 
 export type TextFieldProps = {
   onInput?: (value: string) => void;

@@ -30,6 +30,5 @@ Default.args = {
   price: 330
 };
 IsInCart.args = {
-  isInCart: () => true,
   price: 330
 };

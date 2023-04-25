@@ -1,5 +1,6 @@
 import Heading from "../Heading";
 import * as S from "./styles";
+import React from "react";
 
 export type TextContentProps = {
   title?: string;

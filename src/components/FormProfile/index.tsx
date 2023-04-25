@@ -2,6 +2,7 @@ import * as S from "./styles";
 import Heading from "../Heading";
 import TextField from "../TextField";
 import Button from "../Button";
+import React from "react";
 
 const FormProfile = () => {
   return (

@@ -1,6 +1,7 @@
-import { Container } from "@/components/Container";
-import Empty from "@/components/Empty";
-import Base from "@/templates/Base";
+import { Container } from "../components/Container";
+import Empty from "../components/Empty";
+import Base from "../templates/Base";
+import React from "react";
 
 export default function Page404() {
   return (

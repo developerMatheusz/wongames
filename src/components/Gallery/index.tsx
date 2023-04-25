@@ -5,6 +5,7 @@ import { Close } from "@styled-icons/material-sharp/Close";
 import Slider, { SliderSettings } from "../Slider";
 import SlickSlider from "react-slick";
 import * as S from "./styles";
+import React from "react";
 
 const commonSettings: SliderSettings = {
   infinite: false,

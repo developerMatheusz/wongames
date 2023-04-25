@@ -4,6 +4,7 @@ import Button from "../Button";
 import Heading from "../Heading";
 import Radio from "../Radio";
 import * as S from "./styles";
+import React from "react";
 
 export type PaymentOptionsProps = {
   cards?: PaymentCard[];

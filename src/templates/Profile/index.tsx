@@ -1,9 +1,10 @@
-import { Container } from "@/components/Container";
+import { Container } from "../../components/Container";
 import { useRouter } from "next/router";
-import Heading from "@/components/Heading";
-import ProfileMenu from "@/components/ProfileMenu";
+import Heading from "../../components/Heading";
+import ProfileMenu from "../../components/ProfileMenu";
 import Base from "../Base";
 import * as S from "./styles";
+import React from "react";
 
 export type ProfileTemplateProps = {
   children: React.ReactNode;

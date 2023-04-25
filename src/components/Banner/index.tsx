@@ -1,6 +1,7 @@
 import Button from "../Button";
 import Ribbon, { RibbonColors, RibbonSizes } from "../Ribbon";
 import * as S from "./styles";
+import React from "react";
 
 export type BannerProps = {
   img: string;

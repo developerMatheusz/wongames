@@ -1,6 +1,7 @@
 import * as S from "./styles";
 import { forwardRef } from "react";
 import SlickSlider, { Settings } from "react-slick";
+import React from "react";
 
 export type SliderSettings = Settings;
 

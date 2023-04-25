@@ -1,5 +1,6 @@
 import { useState } from "react";
 import * as S from "./styles";
+import React from "react";
 
 export type DropdownProps = {
   title: React.ReactNode;

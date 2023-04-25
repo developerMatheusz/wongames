@@ -2,6 +2,7 @@ import * as S from "./styles";
 import { Apple, Windows, Linux } from "@styled-icons/fa-brands";
 import Heading from "../Heading";
 import MediaMatch from "../MediaMatch";
+import React from "react";
 
 type Platform = "windows" | "linux" | "mac";
 type Rating = "BR0" | "BR10" | "BR12" | "BR14" | "BR16" | "BR18";

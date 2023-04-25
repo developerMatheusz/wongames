@@ -1,7 +1,8 @@
-import Heading from "@/components/Heading";
-import Logo from "@/components/Logo";
+import Heading from "../../components/Heading";
+import Logo from "../../components/Logo";
 import Link from "next/link";
 import * as S from "./styles";
+import React from "react";
 
 type AuthProps = {
   title: string;

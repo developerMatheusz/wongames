@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useQueryGames } from "../../graphql/queries/games";
+import React, { useContext, createContext, useState, useEffect } from "react";
 import formatPrice from "../../utils/format-price";
 import { getStorageItem, setStorageItem } from "../../utils/localStorage";
 import { cartMapper } from "../../utils/mappers";
-import { createContext, useContext, useEffect, useState } from "react";
 
 const CART_KEY = "cartItems";
 
-type CartItem = {
+export type CartItem = {
   id: string;
   img: string;
   title: string;
@@ -58,8 +58,10 @@ const CartProvider = ({ children }: CartProviderProps) => {
   const { data, loading } = useQueryGames({
     skip: !cartItems?.length,
     variables: {
-      ids: {
-        in: cartItems
+      filters: {
+        id: {
+          in: cartItems
+        }
       }
     }
   });
@@ -68,12 +70,12 @@ const CartProvider = ({ children }: CartProviderProps) => {
     return acc + game.attributes.price;
   }, 0);
 
+  const isInCart = (id: string) => (id ? cartItems.includes(id) : false);
+
   const saveCart = (cartItems: string[]) => {
     setCartItems(cartItems);
     setStorageItem(CART_KEY, cartItems);
   };
-
-  const isInCart = (id: string) => (id ? cartItems.includes(id) : false);
 
   const addToCart = (id: string) => {
     saveCart([...cartItems, id]);

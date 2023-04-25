@@ -3,6 +3,7 @@ import TextField from "../TextField";
 import { AccountCircle, Email, Lock } from "styled-icons/material-outlined";
 import Button from "../Button";
 import Link from "next/link";
+import React from "react";
 
 const FormSignUp = () => {
   return (

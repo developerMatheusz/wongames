@@ -3,6 +3,7 @@ import GameCardSlider from "../GameCardSlider";
 import HighLight, { HighlightProps } from "../Highlight";
 import { GameCardProps } from "../GameCard";
 import * as S from "./styles";
+import React from "react";
 
 export type ShowcaseProps = {
   title?: string;

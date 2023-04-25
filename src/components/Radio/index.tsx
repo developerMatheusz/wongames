@@ -1,5 +1,6 @@
 import { InputHTMLAttributes } from "react";
 import * as S from "./styles";
+import React from "react";
 
 type RadioValue = string | ReadonlyArray<string> | number;
 

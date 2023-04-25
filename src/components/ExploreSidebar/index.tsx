@@ -7,6 +7,7 @@ import Radio from "../Radio";
 import * as S from "./styles";
 import { ParsedUrlQueryInput } from "querystring";
 import xor from "lodash.xor";
+import React from "react";
 
 export type ItemProps = {
   title: string;

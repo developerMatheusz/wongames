@@ -1,17 +1,19 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import ExploreSidebar, { ItemProps } from "@/components/ExploreSidebar";
-import GameCard from "@/components/GameCard";
-import { Grid } from "@/components/Grid";
+import ExploreSidebar, { ItemProps } from "../../components/ExploreSidebar";
+import GameCard from "../../components/GameCard";
+import { Grid } from "../../components/Grid";
 import Base from "../Base";
 import * as S from "./styles";
-import { useQueryGames } from "../../graphql/queries/games";
+import { QUERY_GAMES } from "../../graphql/queries/games";
 import { useRouter } from "next/router";
 import {
   parseQueryStringToFilter,
   parseQueryStringToWhere
-} from "@/utils/filter";
+} from "../../utils/filter";
 import { ParsedUrlQueryInput } from "querystring";
 import Empty from "../../components/Empty";
+import React from "react";
+import { useQuery } from "@apollo/client";
 
 export type GamesTemplateProps = {
   filterItems: ItemProps[];
@@ -20,7 +22,7 @@ export type GamesTemplateProps = {
 const GamesTemplate = ({ filterItems }: GamesTemplateProps) => {
   const { push, query } = useRouter();
 
-  const { data, loading } = useQueryGames({
+  const { data, loading } = useQuery(QUERY_GAMES, {
     variables: {
       filters: parseQueryStringToWhere({
         queryString: query,
@@ -59,6 +61,7 @@ const GamesTemplate = ({ filterItems }: GamesTemplateProps) => {
                 <Grid>
                   {data?.games.data.map((game: any) => (
                     <GameCard
+                      id={game.id}
                       key={game.attributes.slug}
                       title={game.attributes.name}
                       slug={game.attributes.slug}

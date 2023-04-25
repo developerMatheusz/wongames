@@ -1,6 +1,7 @@
 import Heading from "../Heading";
 import { PaymentCard } from "../PaymentOptions";
 import * as S from "./styles";
+import React from "react";
 
 export type CardsListProps = {
   cards?: PaymentCard[];

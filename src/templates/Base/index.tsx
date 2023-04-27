@@ -3,16 +3,19 @@ import Footer from "../../components/Footer";
 import Menu from "../../components/Menu";
 import * as S from "./styles";
 import React from "react";
+import { useSession } from "next-auth/react";
 
 export type BaseTemplateProps = {
   children: React.ReactNode;
 };
 
 const Base = ({ children }: BaseTemplateProps) => {
+  const { data: session } = useSession();
+
   return (
     <S.Wrapper>
       <Container>
-        <Menu />
+        <Menu username={session?.user?.name} />
       </Container>
       <S.Content>{children}</S.Content>
       <S.SectionFooter>

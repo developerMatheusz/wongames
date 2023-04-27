@@ -43,7 +43,6 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  //Get game data
   const { data } = await apolloClient.query({
     query: QUERY_GAME_BY_SLUG,
     variables: {
@@ -67,7 +66,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     name: categorie.attributes.name
   }));
 
-  //Get recommended games
   const { data: games } = await apolloClient.query({
     query: QUERY_RECOMMENDED
   });
@@ -75,7 +73,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const recommendedGames = games.recommended.data.attributes.section.games.data;
   const recommendedTitle = games.recommended.data.attributes.section.title;
 
-  //Get upcoming games and highlight
   const TODAY = new Date().toISOString().slice(0, 10);
   const { data: upcoming } = await apolloClient.query({
     query: QUERY_UPCOMING,
@@ -91,6 +88,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       cover: `http://localhost:1337${game.attributes.cover?.data.attributes.src}`,
       gameInfo: {
+        id: game.id,
         title: game.attributes.name,
         price: game.attributes.price,
         description: game.attributes.short_description

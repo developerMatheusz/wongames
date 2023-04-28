@@ -12,7 +12,7 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { MUTATION_REGISTER } from "../../graphql/mutations/register";
 import { signIn } from "next-auth/react";
-import { FieldErrors, signUpValidate } from "@/utils/validations";
+import { FieldErrors, signUpValidate } from "../../utils/validations";
 
 const FormSignUp = () => {
   const [formError, setFormError] = useState("");
@@ -82,7 +82,7 @@ const FormSignUp = () => {
         <TextField
           name="email"
           placeholder="Email"
-          type="email"
+          type="text"
           error={fieldError?.email}
           onInputChange={(v) => handleInput("email", v)}
           icon={<Email />}

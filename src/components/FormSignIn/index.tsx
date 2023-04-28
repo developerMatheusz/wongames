@@ -18,7 +18,8 @@ const FormSignIn = () => {
   const [fieldError, setFieldError] = useState<FieldErrors>({});
   const [values, setValues] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
-  const { push } = useRouter();
+  const routes = useRouter();
+  const { push, query } = routes;
 
   const handleInput = (field: string, value: string) => {
     setValues((s) => ({ ...s, [field]: value }));
@@ -41,7 +42,7 @@ const FormSignIn = () => {
     const result = await signIn("credentials", {
       ...values,
       redirect: false,
-      callbackUrl: "/"
+      callbackUrl: `${window.location.origin}${query?.callbackUrl || ""}`
     });
 
     if (result?.url) {
@@ -65,7 +66,7 @@ const FormSignIn = () => {
           onInputChange={(v) => handleInput("email", v)}
           name="email"
           placeholder="Email"
-          type="email"
+          type="text"
           error={fieldError?.email}
           icon={<Email />}
         />
@@ -77,7 +78,9 @@ const FormSignIn = () => {
           error={fieldError?.password}
           icon={<Lock />}
         />
-        <S.ForgotPassword href="#">Forgot your password?</S.ForgotPassword>
+        <S.ForgotPassword href="/forgot-password">
+          Forgot your password?
+        </S.ForgotPassword>
         <Button type="submit" size="large" fullWidth disabled={loading}>
           {loading ? <FormLoading /> : <span>Sign in now</span>}
         </Button>

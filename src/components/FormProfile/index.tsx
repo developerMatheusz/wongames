@@ -3,8 +3,14 @@ import Heading from "../Heading";
 import TextField from "../TextField";
 import Button from "../Button";
 import React from "react";
+import Link from "next/link";
 
-const FormProfile = () => {
+export type FormProfileProps = {
+  username?: string;
+  email?: string;
+};
+
+const FormProfile = ({ email, username }: FormProfileProps) => {
   return (
     <S.Wrapper>
       <Heading lineBottom color="black" size="small">
@@ -12,32 +18,27 @@ const FormProfile = () => {
       </Heading>
       <S.Form>
         <TextField
-          name="name"
-          placeholder="Name"
-          label="Name"
-          initialValue="Jhon Doe"
+          name={username}
+          placeholder="Username"
+          label="Username"
+          initialValue={username}
         />
         <TextField
           name="email"
-          type="email"
+          type="text"
           placeholder="E-mail"
-          initialValue="jhondoe@gmail.com"
+          initialValue={email}
           label="E-mail"
           disabled
         />
-        <TextField
-          name="password"
-          type="password"
-          placeholder="Type your password"
-          label="Password"
-        />
-        <TextField
-          name="new_password"
-          type="password"
-          placeholder="New password"
-          label="New password"
-        />
-        <Button size="large">Save</Button>
+        <S.ButtonContainer>
+          <Link href={`/forgot-password?email=${email}`}>
+            <Button minimal size="medium">
+              Reset Password
+            </Button>
+          </Link>
+          <Button size="large">Save</Button>
+        </S.ButtonContainer>
       </S.Form>
     </S.Wrapper>
   );

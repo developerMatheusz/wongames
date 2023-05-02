@@ -1,10 +1,15 @@
 import { gql } from "@apollo/client";
 
 export const QUERY_PROFILE_ME = gql`
-  query QueryProfileMe {
-    me {
-      username
-      email
+  query QueryProfileMe($username: String!) {
+    usersPermissionsUsers(filters: { username: { eq: $username } }) {
+      data {
+        id
+        attributes {
+          email
+          username
+        }
+      }
     }
   }
 `;

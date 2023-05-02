@@ -4,30 +4,28 @@ import { Divider } from "../../components/Divider";
 import { GameCardProps } from "../../components/GameCard";
 import Heading from "../../components/Heading";
 import { HighlightProps } from "../../components/Highlight";
-import PaymentOptions, {
-  PaymentOptionsProps
-} from "../../components/PaymentOptions";
+import PaymentForm from "../../components/PaymentForm";
 import Showcase from "../../components/Showcase";
 import Base from "../Base";
 import * as S from "./styles";
 import { Info } from "@styled-icons/material-outlined/Info";
 import React from "react";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 
 export type CartProps = {
   recommendedTitle?: string;
   recommendedGames: GameCardProps[];
   recommendedHighlight: HighlightProps;
-} & CartListProps &
-  Pick<PaymentOptionsProps, "cards">;
+} & CartListProps;
+
+const stripe = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE!);
 
 const Cart = ({
   recommendedTitle,
   recommendedGames,
-  recommendedHighlight,
-  cards
+  recommendedHighlight
 }: CartProps) => {
-  const handlePayment = () => ({});
-
   return (
     <Base>
       <Container>
@@ -36,7 +34,9 @@ const Cart = ({
         </Heading>
         <S.Content>
           <CartList />
-          <PaymentOptions cards={cards} handlePayment={handlePayment} />
+          <Elements stripe={stripe}>
+            <PaymentForm />
+          </Elements>
         </S.Content>
         <S.Text>
           <Info size={18} /> Your purchase is protected by a secure connection

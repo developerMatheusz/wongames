@@ -14,6 +14,7 @@ import { ParsedUrlQueryInput } from "querystring";
 import Empty from "../../components/Empty";
 import React from "react";
 import { useQuery } from "@apollo/client";
+import { getImageUrl } from "@/utils/getImageUrl";
 
 export type GamesTemplateProps = {
   filterItems: ItemProps[];
@@ -68,7 +69,9 @@ const GamesTemplate = ({ filterItems }: GamesTemplateProps) => {
                       developer={
                         game.attributes.developers.data[0].attributes.name
                       }
-                      img={`http://localhost:1337${game.attributes.cover.data.attributes.url}`}
+                      img={`${getImageUrl(
+                        game.attributes.cover.data.attributes.url
+                      )}`}
                       price={game.attributes.price}
                     />
                   ))}

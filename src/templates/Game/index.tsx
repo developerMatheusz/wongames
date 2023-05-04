@@ -9,8 +9,10 @@ import { HighlightProps } from "../../components/Highlight";
 import Showcase from "../../components/Showcase";
 import { Divider } from "../../components/Divider";
 import React from "react";
+import { NextSeo } from "next-seo";
 
 export type GameTemplateProps = {
+  slug?: string;
   cover: string;
   gameInfo: GameInfoProps;
   gallery?: GalleryImageProps[];
@@ -24,6 +26,7 @@ export type GameTemplateProps = {
 };
 
 const Game = ({
+  slug,
   cover,
   gameInfo,
   gallery,
@@ -37,6 +40,22 @@ const Game = ({
 }: GameTemplateProps) => {
   return (
     <Base>
+      <NextSeo
+        title={`${gameInfo.title} - Won Games`}
+        description={gameInfo.description}
+        canonical={`https://wongames.matheuszanela.com.br/game/${slug}`}
+        openGraph={{
+          url: `https://wongames.matheuszanela.com.br/game/${slug}`,
+          title: `${gameInfo.title} - Won Games`,
+          description: gameInfo.description,
+          images: [
+            {
+              url: cover,
+              alt: `${gameInfo.title}`
+            }
+          ]
+        }}
+      />
       <S.Cover src={cover} role="image" aria-label="cover" />
       <S.Main>
         <S.SectionGameInfo>

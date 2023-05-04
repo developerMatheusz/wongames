@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { css } from "styled-components";
 import media from "styled-media-query";
 import * as HeadingStyles from "../Heading/styles";
+import { darken } from "polished";
 
 export const Wrapper = styled.footer`
   ${HeadingStyles.Wrapper} {
@@ -26,10 +27,10 @@ export const Column = styled.div`
     a,
     span {
       display: block;
-      color: ${theme.colors.gray};
+      color: ${darken(0.2, theme.colors.black)};
       text-decoration: none;
       margin-bottom: ${theme.spacings.xxsmall};
-      font-size: ${theme.font.sizes.small};
+      font-size: ${theme.font.sizes.medium};
     }
     a:hover {
       text-decoration: underline;

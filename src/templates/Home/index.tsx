@@ -7,6 +7,7 @@ import Showcase from "../../components/Showcase";
 import Base from "../Base";
 import * as S from "./styles";
 import React from "react";
+import { NextSeo } from "next-seo";
 
 export type HomeTemplateProps = {
   banners: BannerProps[];
@@ -39,6 +40,7 @@ export default function Home({
 }: HomeTemplateProps) {
   return (
     <Base>
+      <NextSeo title={`Welcome to Won Games`} />
       <Container>
         <S.SectionBanner>
           <BannerSlider items={banners} />

@@ -12,8 +12,11 @@ import { Info } from "@styled-icons/material-outlined/Info";
 import React from "react";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+import { Session } from "next-auth";
+import { NextSeo } from "next-seo";
 
 export type CartProps = {
+  session: Session;
   recommendedTitle?: string;
   recommendedGames: GameCardProps[];
   recommendedHighlight: HighlightProps;
@@ -22,12 +25,14 @@ export type CartProps = {
 const stripe = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE!);
 
 const Cart = ({
+  session,
   recommendedTitle,
   recommendedGames,
   recommendedHighlight
 }: CartProps) => {
   return (
     <Base>
+      <NextSeo title={`${recommendedTitle} - Won Games`} />
       <Container>
         <Heading lineLeft lineColor="secondary">
           My cart
@@ -35,7 +40,7 @@ const Cart = ({
         <S.Content>
           <CartList />
           <Elements stripe={stripe}>
-            <PaymentForm />
+            <PaymentForm session={session} />
           </Elements>
         </S.Content>
         <S.Text>

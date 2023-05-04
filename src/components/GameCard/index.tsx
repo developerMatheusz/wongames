@@ -4,6 +4,7 @@ import * as S from "./styles";
 import React from "react";
 import CartButton from "../CartButton";
 import WishlistButton from "../WishlistButton";
+import Image from "next/legacy/image";
 
 export type GameCardProps = {
   id: string;
@@ -37,8 +38,8 @@ const GameCard = ({
           {ribbon}
         </Ribbon>
       )}
-      <S.ImageBox href={`game/${slug}`}>
-        <img src={img} alt={title} />
+      <S.ImageBox>
+        <Image src={img} alt={title} layout="fill" />
       </S.ImageBox>
       <S.Content>
         <S.Info href={`game/${slug}`}>

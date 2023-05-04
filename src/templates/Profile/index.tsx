@@ -5,6 +5,7 @@ import ProfileMenu from "../../components/ProfileMenu";
 import Base from "../Base";
 import * as S from "./styles";
 import React from "react";
+import { NextSeo } from "next-seo";
 
 export type ProfileTemplateProps = {
   children: React.ReactNode;
@@ -15,6 +16,7 @@ const Profile = ({ children }: ProfileTemplateProps) => {
 
   return (
     <Base>
+      <NextSeo title={`My Profile - Won Games`} />
       <Container>
         <Heading lineLeft lineColor="secondary">
           My profile

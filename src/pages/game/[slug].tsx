@@ -8,6 +8,7 @@ import { QUERY_RECOMMENDED } from "../../graphql/queries/recommended";
 import { QUERY_UPCOMING } from "../../graphql/queries/upcoming";
 import { gamesMapper, highlightMapper } from "../../utils/mappers";
 import React from "react";
+import { getImageUrl } from "@/utils/getImageUrl";
 
 const apolloClient = initializeApollo();
 
@@ -86,7 +87,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     revalidate: 60,
     props: {
-      cover: `http://localhost:1337${game.attributes.cover?.data.attributes.src}`,
+      slug: params?.slug,
+      cover: `${getImageUrl(game.attributes.cover?.data.attributes.src)}`,
       gameInfo: {
         id: game.id,
         title: game.attributes.name,
@@ -94,7 +96,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         description: game.attributes.short_description
       },
       gallery: gallery.map((image: any) => ({
-        src: `http://localhost:1337${image.src.src}`,
+        src: `${getImageUrl(image.src.src)}`,
         label: image.src.label
       })),
       description: game.attributes.description,

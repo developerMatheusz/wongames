@@ -11,6 +11,7 @@ import React from "react";
 import { useWishlist } from "../../hooks/use-wishlist";
 import Loader from "../../components/Loader";
 import * as S from "./styles";
+import { NextSeo } from "next-seo";
 
 export type WishlistTemplateProps = {
   recommendedTitle?: string;
@@ -27,6 +28,7 @@ const Wishlist = ({
 
   return (
     <Base>
+      <NextSeo title={`My favorite games to Won Games`} />
       <Container>
         <Heading lineLeft lineColor="secondary">
           Wishlist

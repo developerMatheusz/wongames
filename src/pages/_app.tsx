@@ -10,6 +10,8 @@ import { CartProvider } from "../hooks/use-cart";
 import React from "react";
 import { SessionProvider } from "next-auth/react";
 import { WishlistProvider } from "../hooks/use-wishlist";
+import { DefaultSeo } from "next-seo";
+import SEO from "../../next-seo.config";
 
 export default function App({ Component, pageProps }: AppProps) {
   const client = useApollo(pageProps.initialApolloState);
@@ -23,6 +25,7 @@ export default function App({ Component, pageProps }: AppProps) {
               <Head>
                 <title>Won Games</title>
               </Head>
+              <DefaultSeo {...SEO} />
               <GlobalStyles />
               <NextNProgress
                 color="#F231A5"

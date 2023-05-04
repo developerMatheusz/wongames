@@ -8,6 +8,7 @@ import Document, {
 } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 import React from "react";
+import Analytics from "@/components/Analytics";
 
 export default class MyDocument extends Document {
   static async getInitialProps(
@@ -41,7 +42,7 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang="pt-br">
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
@@ -72,6 +73,7 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <Analytics />
         </body>
       </Html>
     );

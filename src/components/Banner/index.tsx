@@ -2,6 +2,7 @@ import Button from "../Button";
 import Ribbon, { RibbonColors, RibbonSizes } from "../Ribbon";
 import * as S from "./styles";
 import React from "react";
+import Image from "next/legacy/image";
 
 export type BannerProps = {
   img: string;
@@ -31,7 +32,9 @@ const Banner = ({
           {ribbon}
         </Ribbon>
       )}
-      <S.Image src={img} role="img" aria-label={title} />
+      <S.ImageWrapper>
+        <Image src={img} alt={title} layout="fill" objectFit="cover" />
+      </S.ImageWrapper>
       <S.Caption>
         <S.Title>{title}</S.Title>
         <S.Subtitle dangerouslySetInnerHTML={{ __html: subtitle }} />

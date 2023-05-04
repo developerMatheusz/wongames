@@ -37,6 +37,7 @@ const wrapperModifiers = {
 
 export const Wrapper = styled.div<RibbonProps>`
   ${({ theme, color, size }) => css`
+    z-index: ${theme.layers.base};
     position: absolute;
     top: ${theme.spacings.xsmall};
     display: flex;

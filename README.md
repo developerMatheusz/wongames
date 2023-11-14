@@ -1,49 +1,51 @@
-# Site ecommerce para vender jogos
+# Site ecommerce em NextJS
 
-O projeto da Won Games tem como objetivo listar jogos que estão disponiveis para
-serem comprados ou baixados gratuitamente
+<img src="/public/image1.png" width="600px;" height="400px;" alt="Foto de perfil">
 
-### 📋 Pré-requisitos
+> Projeto site ecommerce desenvolvido com as principais tecnologias JavaScript do mercado. Baseado no curso React Avançado feito pelo professor Willian Justen de Vasconcellos na plataforma Udemy.
 
-NodeJS versão 14.0.0 ou superior:
+## 💻 Pré-requisitos
 
-```
-https://nodejs.org/en
-```
+Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
-### 🔧 Instalação
+- Você instalou a versão mais recente de `<NodeJS / NPM>`
+- Este projeto funciona em `<Windows / Linux / Mac>`.
 
-Comando para instalar as dependências do projeto:
+## 🚀 Instalando Site ecommerce em NextJS
+
+Para instalar o Site ecommerce em NextJS, siga estas etapas:
+
+Linux, macOS e Windows:
 
 ```
 npm i
 ```
 
-Comando para executar o servidor NextJS:
+## ☕ Usando Site ecommerce em NextJS
+
+Para usar Site ecommerce em NextJS, siga estas etapas:
 
 ```
 npm run dev
 ```
 
-## 🛠️ Construído com
+## 🤝 Colaboradores
 
-* [NextJS](https://nextjs.org) - O framework react para a Web
-* [NextAuth](https://next-auth.js.org) - Módulo de autenticação do NextJS
-* [NextSEO](https://github.com/garmeeh/next-seo) - Módulo de SEO do NextJS
-* [NextProgressBar](https://github.com/apal21/nextjs-progressbar) - Módulo de ProgressBar do NextJS
-* [ReactSlick](https://react-slick.neostack.com) - Biblioteca React para criar slides carrossel
-* [StyledComponents](https://styled-components.com) - Biblioteca de estilos CSS-In-JS
-* [StyledMediaQuery](https://github.com/morajabi/styled-media-query) - Biblioteca do styled-components para configurar componentes responsivos
-* [StyledIcons](https://styled-icons.dev) - Biblioteca do styled-components para adicionar ícones SVG em forma de componente
-* [Apollo](https://www.apollographql.com) - Plataforma de gerenciamento de API`s GraphQL
-* [Storybook](https://storybook.js.org) - Ferramenta para documentar interfaces gráficas
-* [Stripe](https://stripe.com/br) - Infraestrutura de pagamentos pela internet
-* [ESLint](https://eslint.org) - Gerente de código de qualidade
-* [Prettier](https://prettier.io) - Usada para formatar código fonte
+Agradecemos às seguintes pessoas que contribuíram para este projeto:
 
-## 📄 Licença
+<table>
+  <tr>
+    <td align="center">
+      <a href="#" title="Minha foto de perfil">
+        <img src="/public/image1.png" width="100px;" alt="Foto do Matheus Zanela no GitHub"/><br>
+        <sub>
+          <b>Matheus Zanela</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
 
-Este projeto está sob a licença (MIT) - veja o arquivo [LICENSE.md](https://github.com/developerMatheusz/wongames/blob/main/LICENSE.md) para detalhes.
+## 📝 Licença
 
----
-Desenvolvido por [Matheus Zanela](https://github.com/developerMatheusz)
+Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
